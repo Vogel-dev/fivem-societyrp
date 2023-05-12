@@ -1,0 +1,16 @@
+Locales['en'] = {
+  ['press_to_chop'] = "Wciśnij ~INPUT_CONTEXT~ aby rozebrać pojazd na części",
+  ['map_blip'] = "Złomowanie pojazdu",
+  ['map_blip_shop'] = "Skup części samochodowych",
+  ['no_vehicle'] = "Musisz być w pojeździe.",
+  ['open_shop'] = "Wciśnij ~INPUT_CONTEXT~ aby otworzyć ~b~sklep.",
+  ['sold'] = "Sprzedałeś ~b~%sx~s~ ~y~%s~s~ za ~g~$%s~s~",
+  ['not_enough'] = '~r~Nie posiadasz tej części!',
+  ['shop_prompt'] = 'Wciśnij ~INPUT_CONTEXT~ aby porozmawiać ze ~o~Stefanem',
+  ['item'] = '$%s',
+  ['shop_title'] = 'Skup części samochodowych - Stefan wita',
+  ['cooldown'] = '~s~Musisz odczekać~r~%s sekund ~s~zanim ~g~rozbierzesz kolejny pojazd.',
+  ['call'] = 'Someone is Chopping a vehicle.',
+  ['911'] = '911 Call',
+  ['chop'] = 'Car Chopping',
+}

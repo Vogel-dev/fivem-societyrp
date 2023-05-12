@@ -1,0 +1,16 @@
+Locales['fr'] = {
+	['GPS_info'] = 'Nowe zlecenie zostało oznaczone na twoim ~y~GPS',
+	['cancel_mission'] = '~r~Anulowałeś aktualne zlecenie',
+	['pickup'] = 'Wciśnij ~INPUT_CONTEXT~ aby ~y~dokonać inspekcji',
+	['end_service'] = 'Skończ pracę',
+	['take_service'] = 'Rozpocznij pracę',
+	['end_service_notif'] = '~g~Praca zakończona',
+	['take_service_notif'] = '~b~Praca rozpoczęta',
+	['start_job'] = 'Wciśnij ~b~F10 ~w~aby podjąć zlecenie',
+	['Vehicle_Menu_Title'] = 'Pojazd służbowy',
+	['in_vehicle'] = '~r~Musisz być poza pojazdem służbowym!',
+	['vehicle_broken'] = '~r~Musisz naprawić swój pojazd służbowy zanim kontynuujesz!',
+	['bad_vehicle'] = '~o~Możesz tutaj schować tylko pojazd służbowy',
+	['not_good_veh'] = '~r~Musisz być w pojeździe służbowym!',
+	['stop_npc'] = '~g~Praca wykonana: ~y~wróc na bazę',
+}

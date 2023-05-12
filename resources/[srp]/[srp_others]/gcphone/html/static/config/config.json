@@ -1,0 +1,158 @@
+{
+  "reseau": "SNET",
+  
+  "themeColor": "#303f9f",
+  "colors": [
+    "#EF5350",
+    "#EC407A",
+    "#AB47BC",
+    "#7E57C2",
+    "#5C6BC0",
+    "#42A5F5",
+    "#29B6F6",
+    "#26C6DA",
+    "#26A69A",
+    "#66BB6A",
+    "#9CCC65",
+    "#D4E157",
+    "#FFCA28",
+    "#FFA726",
+    "#FF7043",
+    "#8D6E63",
+    "#78909C"
+  ],
+  
+  "useWebRTCVocal": false,
+
+  "useFormatNumberFrance": true,
+
+  "background" : {
+    "1": "back001.jpg",
+    "2": "back002.jpg",
+    "3": "back003.jpg",
+    "4": "back004.jpg",
+    "Twoj link": "URL"
+  },
+  "background_default": {
+    "label": "3",
+    "value": "back003.jpg"
+  },
+
+
+  "coque": {
+    "Sansumg S8": "s8.png",
+    "Iphone X": "iphonex.png",
+    "Brick Base": "base.png",
+    "Transparent": "transparent.png"
+  },
+  "coque_default": {
+    "label": "Samsung S8",
+    "value": "s8.png"
+  },
+
+
+  "serviceCall": [
+    {
+      "display": "LSPD",
+      "backgroundColor": "blue",
+      "subMenu": [
+        {
+          "title": "Wyslij wiadomosc",
+          "eventName": "esx_addons_gcphone:call",
+          "type": {
+            "number": "police"
+          }
+        },
+        {
+          "title": "Call 911",
+          "eventName": "gcphone:autoCallNumber",
+          "type": {
+            "number": "911"
+          }
+        }
+      ]
+    },
+    {
+      "display": "Pogotowie",
+      "backgroundColor": "red",
+      "subMenu": [
+        {
+          "title": "Wyslij wiadomosc",
+          "eventName": "esx_addons_gcphone:call",
+          "type": {
+            "number": "ambulance"
+          }
+        }
+      ]
+    },
+  {
+      "display": "Mechanik",
+      "backgroundColor": "yellow",
+      "subMenu": [
+        {
+          "title": "Wyslij wiadomosc",
+          "eventName": "esx_addons_gcphone:call",
+          "type": {
+            "number": "mecano"
+          }
+        }
+      ]
+    }
+
+  ],
+
+  "apps": [
+    {
+      "name": "Telefon",
+      "icons": "/html/static/img/icons_app/call.png",
+      "routeName": "appels",
+      "inHomePage": true
+    },
+    {
+      "name": "Wiadomości",
+      "icons": "/html/static/img/icons_app/sms.png",
+      "routeName": "messages",
+      "inHomePage": true,
+      "puceRef": "nbMessagesUnread"
+    },
+    {
+      "name": "Kontakty",
+      "icons": "/html/static/img/icons_app/contacts.png",
+      "routeName": "contacts",
+      "inHomePage": true
+    },
+    {
+      "name": "Ustawienia",
+      "icons": "/html/static/img/icons_app/settings.png",
+      "routeName": "parametre",
+      "inHomePage": true
+    },
+    {
+      "name": "Bank",
+      "icons": "/html/static/img/icons_app/bank.png",
+      "routeName": "bank",
+      "inHomePage": false
+    },
+    {
+      "name": "Bourse",
+      "icons": "/html/static/img/icons_app/bourse.png",
+      "routeName": "bourse",
+      "enabled": false
+    },
+    {
+      "name": "Aparat",
+      "icons": "/html/static/img/icons_app/photo.png",
+      "routeName": "photo"
+    },
+    {
+      "name": "Dark Web",
+      "icons": "/html/static/img/icons_app/tchat.png",
+      "routeName": "tchat"
+    },
+    {
+      "name": "9GAG",
+      "icons": "/html/static/img/icons_app/9gag.png",
+      "routeName": "9gag"
+    }
+  ]
+}

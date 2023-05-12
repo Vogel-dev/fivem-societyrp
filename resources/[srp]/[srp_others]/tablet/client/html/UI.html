@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<!--- <script src="nui://game/ui/jquery.js" type="text/javascript"></script>  tutaj komentarz ---->
+		
+		<script>
+		$(function() {
+			/* open the UI for user */
+			window.addEventListener('message', function(event) {
+				if(event.data.type == "open"){
+					$('.btn-group').css('display', 'block')
+					$('body').css('display', 'block')
+					$('html').css('display', 'block')
+					$('#menujail').hide();
+					$('#menumandat').hide();
+				} else if (event.data.type == "close"){
+					$('.btn-group').css('display', 'none')
+					$('body').css('display', 'none')
+					$('html').css('display', 'none')
+					$('#mySidenav').css('width', '0')
+				}
+				
+
+			});
+		});	
+		</script>
+	</head>
+
+    <body>	
+		<div class="btn-group">	
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+					<div id="mySidenav" class="sidenav text-center">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><br></a>
+
+
+					<button class="btn-sm btn btn-success mt-3 custom" id="mandatbtn">Wystaw fakturę</button>
+
+	
+					<div class="spacer"></div>
+					<button class="btn-sm btn-danger custom" id="exit_gui">Zamknij</button>
+					</div>
+					<div class="mt-5 pl-5" style="" onclick="">
+<br>
+<br>
+</div>				
+					</div>
+					
+					
+				</div>
+				<div class="row">
+					<div class="col-md-4 top"></div>
+					<div class="col-md-6 right-color mt-1" id="menujail" >
+						<div class="d-flex justify-content-md-center pb-2">
+							<input class="btn-block mt-2" id="jail_reason" type="text" placeholder="Wpisz powód wysłania do więzienia">
+						</div>
+						<div class="d-flex justify-content-md-center pb-2">
+							<input class="btn-block mt-2" id="jail_time" type="text" placeholder="Czas odsiadki">
+						</div>
+						<div class="d-flex justify-content-md-center pb-2">
+							<input class="btn-block mt-2" id="jail_grzywna" type="text" placeholder="Grzywna">
+						</div>
+							<button class="btn btn-block mt-1 btn-success border border-light" id="sendjail">Wyślij do wiezienia</button>						
+					</div>
+					<div class="col-md-6 right-color mt-1 " id="menumandat">
+						<div class="d-flex justify-content-md-center pb-2">
+							<input class="btn-block mt-2" id="mandat_reason" type="text" placeholder="Wpisz powód">
+						</div>
+						<div class="d-flex justify-content-md-center pb-2">
+							<input class="btn-block mt-2" id="mandat_amount" type="text" placeholder="Kwota">
+						</div>
+							<button class="btn btn-block mt-5 btn-success border border-light" id="sendmandat">Wystaw mandat</button>						
+					</div>
+										
+				</div>
+			</div>	 
+		</div>
+    </body>
+	
+	<script type="text/javascript">
+	function openNav() {
+		document.getElementById("mySidenav").style.width = "200px";
+	}
+
+	function closeNav() {
+		document.getElementById("mySidenav").style.width = "0";
+	}
+
+	$("#exit_gui").click(function(){
+		$('.btn-group').css('display', 'none')
+		$('#mySidenav').css('width', '0')
+		$.post('http://tablet/NUIFocusOff', JSON.stringify({}));
+	});
+	
+	$("#mandatbtn").click(function(){
+		$('#menujail').hide();
+		$('#menukartoteka').hide();
+		$('#menumandat').fadeIn(1000);
+	});	
+	$("#jailbtn").click(function(){
+		$('#menumandat').hide();
+		$('#menukartoteka').hide();
+		$('#menujail').fadeIn(1000);
+	});
+
+	
+	$("#sendmandat").click(function(){
+		$.post('http://tablet/mandat', JSON.stringify({mandatreason: $("#mandat_reason").val(), mandatamount: $("#mandat_amount").val()}));
+		$('.btn-group').css('display', 'none')
+		$.post('http://tablet/NUIFocusOff', JSON.stringify({}));
+	});
+	
+
+	
+	$("#sendjail").click(function(){
+		$.post('http://tablet/jail', JSON.stringify({jailreason: $("#jail_reason").val(), jailtime: $("#jail_time").val(), jailgrzywna: $("#jail_grzywna").val()}));
+		$('.btn-group').css('display', 'none')
+		$.post('http://tablet/NUIFocusOff', JSON.stringify({}));
+	});
+
+
+	document.onkeyup = function (data) {
+		if (data.which == 27) { // Escape key
+			$('.btn-group').css('display', 'none')
+			$.post('http://tablet/NUIFocusOff', JSON.stringify({}));
+		}
+	};
+	</script>
+</html>
